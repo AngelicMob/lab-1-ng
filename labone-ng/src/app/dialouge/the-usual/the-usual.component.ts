@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TheUsualComponent implements OnInit {
 
+  usualBeverage: string;
+  usualChoice: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
+  theUsual() {
 
+  }
 }

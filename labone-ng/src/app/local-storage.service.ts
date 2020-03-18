@@ -5,7 +5,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class LocalStorageService {
 
-  traveler = { /*information of the user */
+  traveler = {
 
     name: '',
     lastName: '',
@@ -18,9 +18,20 @@ export class LocalStorageService {
   Object: string;
   purchase: boolean;
 
-  checkUserExistence(){
+  checkIfUserExists() {
 
+    if (localStorage.getItem('key') === null) {
+      return 'hewo';
+
+    } else {
+      return 'sweetrolls';
+    }
   }
+
+  saveTravelerName(){
+  }
+
+
 }
 
 

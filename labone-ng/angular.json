@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "labone-ng": {
@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "labone-ng"
+    }
+  },
+  "defaultProject": "labone-ng",
+  "cli": {
+    "analytics": "997e5f21-c9c6-4473-b547-1f65ed0aa98e"
+  }
 }

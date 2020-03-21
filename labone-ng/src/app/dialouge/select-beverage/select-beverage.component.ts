@@ -18,6 +18,6 @@ ngOnInit(): void {
 
 
   Order(order: string) {
-    console.log(order);
+    console.log(order)
   }
 }

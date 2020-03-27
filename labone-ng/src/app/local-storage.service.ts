@@ -17,12 +17,12 @@ export class LocalStorageService {
 
   travelerName: string;
   Object: string;
-  purchase: boolean;
+  purchased: boolean;
 
 
 checkIfTravelerExists() {
 
-  if (localStorage.getItem('key') === null) {
+  if (localStorage.getItem('1') != null) {
 
     return localStorage.getItem('1');
 
@@ -41,7 +41,6 @@ registerTraveler() {
     }
 
 
-
 getTravelerName() {
 
     const returntraveler = localStorage.getItem('1');
@@ -56,11 +55,19 @@ orderBevMeal(bevMeal: string) {
 
   this.traveler.beverageMeal = bevMeal;
   const strings = JSON.stringify(this.traveler);
+  this.Object = strings;
   localStorage.setItem('1', strings);
 
 
 }
 
+getUsualBevMeal() {
+
+  this.purchased = true;
+
+  return this.traveler.beverageMeal;
+
+}
 
 signOutTraveler() {
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { LocalStorageService } from 'src/app/local-storage.service';
 
 @Component({
   selector: 'app-the-usual',
@@ -7,13 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TheUsualComponent implements OnInit {
 
-  usualBeverage: string;
-  usualMealChoice: boolean = false;
-  constructor() { }
+  @Output() purchaseDone = new EventEmitter<boolean>();
+  @Output() usual = new EventEmitter<string>();
+  usualBevMeal: string;
+  usualBevMealChoice: boolean = false;
+
+
+  constructor(private localstorage: LocalStorageService) { }
 
   ngOnInit(): void {
   }
-  theUsual() {
+  UsualBevMeal() {
+
+    this.usualBevMealChoice = true;
+    this.purchaseDone.emit(this.usualBevMealChoice);
+    this.usual.emit(this.usualBevMeal);
+    this.usualBevMeal = this.localstorage.getUsualBevMeal();
+
 
   }
 }

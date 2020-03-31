@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { LocalStorageService } from 'src/app/local-storage.service';
 
 @Component({
@@ -10,14 +10,19 @@ export class SelectBeverageComponent implements OnInit {
 
   beverageMeal: string;
   bevMealSelected: boolean;
-
-constructor() {}
+  @Output() mealbev = new EventEmitter<string>();
+  constructor(public localstorage: LocalStorageService) {}
 
 ngOnInit(): void {
   }
 
 
   Order(order: string) {
-    console.log(order)
+    this.localstorage.orderBevMeal(order);
+    this.bevMealSelected = true;
+    this.beverageMeal = order;
+    this.mealbev.emit(order);
+
   }
+
 }

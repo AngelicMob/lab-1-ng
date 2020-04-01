@@ -12,6 +12,12 @@ h1, h2, h3{
   text-align: center;
   color: antiquewhite;
 }
+
+button {
+
+  color:black;
+  font-size: medium;
+}
 input[type=text] {
   width: 100%;
   text-align: center;

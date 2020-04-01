@@ -5,8 +5,11 @@
 
       <br>
       <br>
-    <h1>
-      Greetings, traveler!
+
+
+    <h1 #firstH1 *ngIf="!travelerSignedUp">
+
+          Greetings, traveler!
       <br>
       <br>
           Haven't seen your face around here before.
@@ -14,22 +17,53 @@
       <br>
           What's your name?
 
-    </h1>
+
+      <h1 *ngIf="travelerSignedUp">
+
+          Alright Mr/Ms. {{lastNameInput.value}}, what can I do you for?</h1>
 
 
+    <div class="col-xs-12 col-md-8 col-md-offset-2" #inputBoxSection>
 
-<br>
 
-      <input type = "text" class="form-control" placeholder=" Name ">
-      <br>
-      <input type = "text" class="form-control" placeholder=" LastName ">
+      <div class="form-group">
 
-      <button class= "btn btn-outline-secondary">Submit</button>
+        <input type="text" class="form-control" #name placeholder=" Name ">
+        <input type="text" class="form-control" #lastName placeholder=" LastName ">
+
+      </div>
+
+      <button class="btn btn-outline-dark" (click)="submit (name.value, lastName.value)">Submit</button>
+
+
       <hr>
-      <app-select-beverage></app-select-beverage>
+
+
+    <div class="usualsection" *ngIf="!NewTraveler">
+      <h2>
+
+        Hello again, Mr/Ms. {{traveler}}
+        The usual?
+
+      </h2>
+      <br>
+    <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
+      <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
 
     </div>
-  </div>
-</div>
+
+
+
+    <app-select-beverage *ngIf="travelerSignedUp || !NewTraveler;" (bev)="getBevMeal($event)"></app-select-beverage>
+
+    </div>
+
+
+    <button class="btn btn-outline-dark" (click)="deleteTraveler()">I was never here</button>
+
+
+
+
+
 
 

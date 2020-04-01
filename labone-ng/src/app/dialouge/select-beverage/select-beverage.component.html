@@ -1,150 +1,50 @@
 <div class="row">
         <hr>
-          <div  class="col-xs-12 col-md-8 col-md-offset-2">
+
+
+        <div  class="col-xs-12 col-md-8 col-md-offset-2">
 
 
 
-            <div class="list-group" *ngIf="!bevMealSelected"><p style="color: white; text-align: center; ">What drink or meal would you like to order?</p>
-              <h3>Alcoholic Drinks</h3>
+          <div class="list-group" *ngIf="!bevMealSelected"><p style="color: white; text-align: center; ">What drink or meal would you like to order?</p>
+
+            <h3>Alcoholic Drinks</h3>
               <hr>
 
-              <div class="row">
 
-                <div class="card"  style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://i.pinimg.com/originals/f7/7b/30/f77b30aa7bc7c0f4f98cc61a7bd25d4d.jpg" (click)= "Order('nord')" alt="drink" style="width:50%">
-                      <div class="container">
-                        <h4><b>Nord Mead</b></h4>
-                      </div>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://i.pinimg.com/originals/ba/3a/77/ba3a777c7d89d39d2c587627b8c445fc.jpg" (click)= "Order('honey')" alt="drink" style="width:50%">
-                      <div class="container">
-                        <h4><b>Honningbrew Mead</b></h4>
-                      </div>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://www.photo-elsoar.com/wp-content/images/Cup-of-mulled-wine-with-spices.jpg" (click)= "Order('wine')" alt="drink" style="width:50%">
-                      <div class="container">
-                        <h4><b>Spiced Wine</b></h4>
-                      </div>
-                  </div>
-
-
-              </div>
-
-              <div class="row">
-                  <div class="card"  style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://i0.wp.com/listamaze.com/wp-content/uploads/2016/05/Old-Fashioned-Cocktail.jpg?resize=600%2C399&ssl=1" (click)= "Order('brandy')" alt="drink" style="width:50%">
-                      <div class="container">
-                        <h4><b>Colovian Brandy</b></h4>
-                      </div>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://www.photo-elsoar.com/wp-content/images/Cup-of-mulled-wine-with-spices.jpg" (click)= "Order('rum')" alt="drink" style="width:50%">
-                      <div class="container">
-                        <h4><b>Stros-M'kai Rum</b></h4>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                    <img src="https://files.elle.se/uploads/2016/04/elle-gin-and-tonic.jpg" (click)= "Order('skooma')"alt="drink" style="width:50%">
-                    <div class="container">
-                      <h4><b>Skooma</b></h4>
-                </div>
-
-
-              </div>
-
-
-                  <!--
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('mead')">Nord Mead</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('honey')">Honningbrew Mead</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('spiced')">Spiced Wine</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('colovian')">Colovian Brandy</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('rum')">Stros-M'kai Rum</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('skooma')">Skooma</button>
-
-              -->
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Nord Mead')">Nord Mead</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Honey Mead')">Honningbrew Mead</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Spiced Wine')">Spiced Wine</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Colovian Brandy')">Colovian Brandy</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Rum')">Stros-M'kai Rum</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Skooma')">Skooma</button>
 
 
 
               <h3>Meals</h3>
 
-              <hr>
-
-              <div class="row2">
-
-                <div class="card"  style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://supervalu.co.uk/wp-content/uploads/2018/09/Apple-Pie.png" (click)= "Order('pie')" alt="meal" style="width:50%">
-                      <div class="container">
-                        <h4><b>Apple Pie</b></h4>
-                      </div>
-                </div>
+        <hr>
 
 
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://files.slack.com/files-pri/TMFPB95A6-F010Q1C9909/sweetrolls.png" (click)= "Order('sweetroll')" alt="meal" style="width:50%">
-                      <div class="container">
-                        <h4><b>Sweetroll</b></h4>
-                      </div>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 100px; width: 150px;">
-                      <img src="https://files.slack.com/files-pri/TMFPB95A6-F0111U07DFG/image.png" (click)= "Order('stew')" alt="meal" style="width:50%">
-                      <div class="container">
-                        <h4><b>Horker Stew</b></h4>
-                      </div>
-                  </div>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Apple Pie')">Apple Pie & Vanilla</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Sweetroll')">Sweetroll</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Horker')">Horker Stew</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Lavender Bread')">Lavender Bread</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Cheese')">Cheese</button>
+              <button type="button" class="list-group-item list-group-item-action" (click)="Order('Braided Bread')">Braided Bread</button>
 
 
-                </div>
-
-
-                <div class="row2">
-                  <div class="card"  style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://lavenderontario.org/wp-content/uploads/2018/03/cooking-01.jpg" (click)= "Order('lavender')" alt="meal" style="width:50%">
-                      <div class="container">
-                        <h4><b>Lavender Bread</b></h4>
-                      </div>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                      <img src="https://bunkerhillcheese.com/images/thumbnails/500/500/detailed/9/original.jpg" (click)= "Order('cheese')" alt="meal" style="width:50%">
-                      <div class="container">
-                        <h4><b>Cheese</b></h4>
-                  </div>
-
-                  <div class="card" style="display: inline-block; height: 150px; width: 150px;">
-                    <img src="https://glutenfreeonashoestring.com/wp-content/uploads/2014/03/Braided-Nutella-Bread.jpg" (click)= "Order('braid')"alt="meal" style="width:50%">
-                    <div class="container">
-                      <h4><b>Braided Bread</b></h4>
-                </div>
-
-
-              </div>
+            </div>
 
 
 
-              <!--
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('pie')">Apple Pie & Vanilla</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('sweetroll')">Sweetroll</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('stew')">Horker Stew</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('lavender')">Lavender Bread</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('cheese')">Cheese</button>
-              <button type="button" class="list-group-item list-group-item-action" (click)="Order('BB')">Braided Bread</button>
 
-              -->
+        <hr>
 
-              <hr>
+           <h2 *ngIf="bevMealSelected">One {{beverageMeal}}, coming right up!</h2>
+    </div>
 
-           <h2 *ngIf="!bevMealSelected">One {{beverageMeal}}, coming right up!</h2>
-          </div>
-
-        </div>
-
+  </div>
 
 
 

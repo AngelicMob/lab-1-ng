@@ -23,13 +23,13 @@ chosen: boolean = false;
 
   ngOnInit(): void {
 
-    this.NewTraveler = this.localstorage.checkIfTravelerExists();
 
     if (this.NewTraveler === false) {
 
       this.traveler = this.localstorage.getTravelerName();
 
     }
+    this.NewTraveler = this.localstorage.checkIfTravelerExists();
 
 }
 
@@ -42,8 +42,9 @@ chosen: boolean = false;
 
     } else {
 
-    this.localstorage.registerTraveler();
+
     this.travelerSignedUp = true;
+    this.localstorage.registerTraveler();
     this.inputBoxSectionPart.nativeElement.remove();
    }
   }

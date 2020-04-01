@@ -1,9 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { SelectBeverageComponent } from './dialouge/select-beverage/select-beverage.component';
+/*import { SelectBeverageComponent } from './dialouge/select-beverage/select-beverage.component';*/
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LocalStorageService {
 
   traveler = {

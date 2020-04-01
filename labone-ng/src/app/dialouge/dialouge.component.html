@@ -7,20 +7,22 @@
       <br>
 
 
-    <h1 #firstH1 *ngIf="!travelerSignedUp">
-
-          Greetings, traveler!
-      <br>
-      <br>
-          Haven't seen your face around here before.
-      <br>
-      <br>
-          What's your name?
 
 
       <h1 *ngIf="travelerSignedUp">
 
-          Alright Mr/Ms. {{lastNameInput.value}}, what can I do you for?</h1>
+          Alright Mr/Ms.{{lastName.value}}, what can I do you for?</h1>
+
+      <h1 #firstH1 *ngIf="!travelerSignedUp">
+
+          Greetings, traveler!
+        <br>
+        <br>
+          Haven't seen your face around here before.
+        <br>
+        <br>
+          What's your name?
+
 
 
     <div class="col-xs-12 col-md-8 col-md-offset-2" #inputBoxSection>

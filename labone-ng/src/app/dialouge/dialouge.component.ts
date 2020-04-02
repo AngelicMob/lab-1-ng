@@ -9,45 +9,46 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class DialougeComponent implements OnInit {
 
-@ViewChild('inputBoxSection') inputBoxSectionPart: ElementRef;
+@ViewChild('inputSection') inputBoxSectionPart: ElementRef;
 
-NewTraveler;
+
 traveler: string;
+NewTraveler: boolean;
 travelerSignedUp: boolean = false;
 beverageMeal: string;
 usualBevMealChoice: boolean = false;
 usualBevMeal: string;
 chosen: boolean = false;
+  inputSectionPart: any;
 
   constructor(private renderer: Renderer2, private localstorage: LocalStorageService) { }
 
   ngOnInit(): void {
 
+    this.NewTraveler = this.localstorage.checkIfTravelerExists();
 
     if (this.NewTraveler === false) {
 
       this.traveler = this.localstorage.getTravelerName();
 
     }
-    this.NewTraveler = this.localstorage.checkIfTravelerExists();
 
 }
 
-
   submit(name: string, lastName: string) {
 
-   if (lastName === '') {
+   if (name === '' || lastName === '') {
 
     console.log('Provide a Last name please')
 
     } else {
 
-
+    this.localstorage.registerTraveler(name, lastName);
     this.travelerSignedUp = true;
-    this.localstorage.registerTraveler();
-    this.inputBoxSectionPart.nativeElement.remove();
+    this.inputSectionPart.nativeElement.remove();
    }
   }
+
 
  getBevMeal(beverageMeal: string) {
 

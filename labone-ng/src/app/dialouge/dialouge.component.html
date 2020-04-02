@@ -1,19 +1,18 @@
 
-<div class="container">
+
   <div class="row">
-    <div class="col-md-12">
 
       <br>
-      <br>
 
+    <div class="travelsection" *ngIf="NewTraveler">
 
 
 
       <h1 *ngIf="travelerSignedUp">
 
-          Alright Mr/Ms.{{lastName.value}}, what can I do you for?</h1>
+          Alright Mr/MS {{lastNameSection.value}}, what can I do you for?</h1>
 
-      <h1 #firstH1 *ngIf="!travelerSignedUp">
+      <h1 *ngIf="!travelerSignedUp">
 
           Greetings, traveler!
         <br>
@@ -25,20 +24,22 @@
 
 
 
-    <div class="col-xs-12 col-md-8 col-md-offset-2" #inputBoxSection>
+    <div class="col-xs-12 col-md-8 col-md-offset-2" #inputSection>
 
 
-      <div class="form-group">
-
-        <input type="text" class="form-control" #name placeholder=" Name ">
-        <input type="text" class="form-control" #lastName placeholder=" LastName ">
-
-      </div>
-
-      <button class="btn btn-outline-dark" (click)="submit (name.value, lastName.value)">Submit</button>
+        <input type="text" class="form-control" #nameSection>
+        <input type="text" class="form-control" #lastNameSection>
 
 
-      <hr>
+      <button class="btn btn-outline-dark" (click)="submit(nameSection.value, lastNameSection.value)">Submit</button>
+
+
+  </div>
+
+
+
+
+  <hr>
 
 
     <div class="usualsection" *ngIf="!NewTraveler">
@@ -49,16 +50,17 @@
 
       </h2>
       <br>
-    <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
+
+      <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
       <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
 
-    </div>
+
 
 
 
     <app-select-beverage *ngIf="travelerSignedUp || !NewTraveler;" (bev)="getBevMeal($event)"></app-select-beverage>
 
-    </div>
+  </div>
 
 
     <button class="btn btn-outline-dark" (click)="deleteTraveler()">I was never here</button>

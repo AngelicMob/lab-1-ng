@@ -20,22 +20,24 @@ export class LocalStorageService {
 
 checkIfTravelerExists() {
 
-  if (localStorage.getItem('1') != null) {
 
-    return localStorage.getItem('1');
+  return (localStorage.getItem('1') !== null) ? false : true;
+  /*if (localStorage.getItem('1') !== null) {
+
+    return false;
 
     } else {
 
-      return console.log('No traveler yet');
+      return true;
 
-  }
+  } */
 }
 
-registerTraveler() {
-    this.travelerName = this.traveler.lastName;
-    this.traveler.name = name;
+registerTraveler(name: string, lastname: string) {
 
-    localStorage.setItem('1',  this.travelerName);
+   this.travelerName = this.traveler.lastName;
+   this.traveler.name = name;
+   return localStorage.setItem('1',  this.travelerName);
     }
 
 

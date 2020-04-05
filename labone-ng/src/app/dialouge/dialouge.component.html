@@ -14,7 +14,7 @@
 
       <div class="signedUp"  *ngIf="travelerSignedUp">
         <h1>Alright Mr/MS {{lastNameSection}} , what can I do you for?</h1>
-        <app-select-beverage (bev)="getBevMeal($event)"></app-select-beverage>
+
       </div>
 
   </div>
@@ -24,10 +24,10 @@
     <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
     </div>
 
-    <button class="btn btn-outline-dark" (click)="deleteTraveler()">I was never here</button>
-
 
 </div>
+<app-select-beverage *ngIf="travelerSignedUp || NewTraveler" (bev)="getBevMeal($event)"></app-select-beverage>
+    <button class="btn btn-outline-dark" (click)="deleteTraveler()">I was never here</button>
 
 
 

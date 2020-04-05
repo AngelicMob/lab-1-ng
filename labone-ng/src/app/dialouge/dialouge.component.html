@@ -3,6 +3,11 @@
 
   <div class="travelSection">
 
+
+      <h1 *ngIf="travelerSignedUp">Alright Mr/MS {{lastNameSection}} , what can I do you for?</h1>
+
+
+
       <div class="firstConversation" *ngIf="!travelerSignedUp && !NewTraveler" >
         <h1>Greetings, traveler!</h1>
         <h1> Haven't seen your face around here before.</h1>
@@ -18,32 +23,25 @@
 
           <button class="button" (click)="submit(nameSection.value, lastNameSection.value)">Submit</button>
 
-
         </div>
 
 
 
 
-
-
-      <div class="signedUp"  *ngIf="travelerSignedUp">
-        <h1>Alright Mr/MS {{lastNameSection}} , what can I do you for?</h1>
-
-      </div>
-
-  </div>
-  <div *ngIf="NewTraveler">
-    <h2>Hello again, Mr/Ms. {{traveler}} The usual?</h2>
-    <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
-    <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
     </div>
 
+    <div *ngIf="NewTraveler">
+      <h2>Hello again, Mr/Ms. {{traveler}} The usual?</h2>
+      <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
+      <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
+      </div>
 
-</div>
+
+  </div>
 <app-select-beverage *ngIf="travelerSignedUp || NewTraveler" (bev)="getBevMeal($event)"></app-select-beverage>
-<div class = "text-center">
-  <button class="btn btn-lg btn-danger" (click)="deleteTraveler()">I was never here</button>
-</div>
+  <div class = "text-center">
+    <button class="btn btn-lg btn-danger" (click)="deleteTraveler()">I was never here</button>
+  </div>
 
 
 

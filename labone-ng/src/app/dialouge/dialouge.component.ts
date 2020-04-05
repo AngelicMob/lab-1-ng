@@ -14,11 +14,11 @@ export class DialougeComponent implements OnInit {
 lastNameSection:string = '';
 traveler: string;
 NewTraveler: boolean;
-travelerSignedUp: boolean = false;
+travelerSignedUp = false;
 beverageMeal: string;
-usualBevMealChoice: boolean = false;
+usualBevMealChoice = false;
 usualBevMeal: string;
-chosen: boolean = false;
+// chosen: boolean = false;
 inputSectionPart: any;
 
   constructor(private renderer: Renderer2, private localstorage: LocalStorageService) { }
@@ -43,9 +43,10 @@ submit(name: string, lastName: string) {
     console.log('Provide a Last name please');
 
     } else {
+    this.travelerSignedUp = true;
     this.lastNameSection = lastName;
     this.localstorage.registerTraveler(name, lastName);
-    this.travelerSignedUp = true;
+
     // this.inputSectionPart.nativeElement.remove();
    }
   }

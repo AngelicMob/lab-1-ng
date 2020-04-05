@@ -11,7 +11,7 @@ export class DialougeComponent implements OnInit {
 
 @ViewChild('inputSection') inputBoxSectionPart: ElementRef;
 
-
+lastNameSection:string = '';
 traveler: string;
 NewTraveler: boolean;
 travelerSignedUp: boolean = false;
@@ -19,15 +19,16 @@ beverageMeal: string;
 usualBevMealChoice: boolean = false;
 usualBevMeal: string;
 chosen: boolean = false;
-  inputSectionPart: any;
+inputSectionPart: any;
 
   constructor(private renderer: Renderer2, private localstorage: LocalStorageService) { }
 
   ngOnInit(): void {
 
     this.NewTraveler = this.localstorage.checkIfTravelerExists();
+    console.log(this.NewTraveler  + "new traveler exist");
 
-    if (this.NewTraveler === false) {
+    if (this.NewTraveler === true) {
 
       this.traveler = this.localstorage.getTravelerName();
 
@@ -35,24 +36,24 @@ chosen: boolean = false;
 
 }
 
-  submit(name: string, lastName: string) {
+submit(name: string, lastName: string) {
 
    if (name === '' || lastName === '') {
 
-    console.log('Provide a Last name please')
+    console.log('Provide a Last name please');
 
     } else {
-
+    this.lastNameSection = lastName;
     this.localstorage.registerTraveler(name, lastName);
     this.travelerSignedUp = true;
-    this.inputSectionPart.nativeElement.remove();
+    // this.inputSectionPart.nativeElement.remove();
    }
   }
 
 
  getBevMeal(beverageMeal: string) {
 
-  this.beverageMeal = this.beverageMeal;
+  this.beverageMeal = beverageMeal;
   this.chosen = true;
  }
 

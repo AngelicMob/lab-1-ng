@@ -9,7 +9,7 @@ import { LocalStorageService } from 'src/app/local-storage.service';
 export class SelectBeverageComponent implements OnInit {
 
   beverageMeal: string;
-  bevMealSelected: boolean;
+  bevMealSelected = false;
   @Output() mealbev = new EventEmitter<string>();
   constructor(public localstorage: LocalStorageService) {}
 

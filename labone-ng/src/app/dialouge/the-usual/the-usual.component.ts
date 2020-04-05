@@ -21,9 +21,10 @@ export class TheUsualComponent implements OnInit {
   UsualBevMeal() {
 
     this.usualBevMealChoice = true;
+    this.usualBevMeal = this.localstorage.getUsualBevMeal();
     this.purchaseDone.emit(this.usualBevMealChoice);
     this.usual.emit(this.usualBevMeal);
-    this.usualBevMeal = this.localstorage.getUsualBevMeal();
+
 
 
   }

@@ -21,29 +21,35 @@ export class LocalStorageService {
 checkIfTravelerExists() {
 
 
-  return (localStorage.getItem('1') !== null) ? false : true;
-  /*if (localStorage.getItem('1') !== null) {
 
-    return false;
+  if (localStorage.getItem('1') !== null) {
+
+    return true;
 
     } else {
 
-      return true;
+      console.log('sweetrolls');
 
-  } */
+      return false;
+
+  }
 }
 
-registerTraveler(name: string, lastname: string) {
+registerTraveler(name: string, lastName: string) {
 
-   this.travelerName = this.traveler.lastName;
-   this.traveler.name = name;
-   return localStorage.setItem('1',  this.travelerName);
+  //  this.travelerName = this.traveler.lastName;
+  //  this.traveler.name = name;
+
+  this.traveler.name = name;
+  this.traveler.lastName = lastName;
+
+  localStorage.setItem('1', JSON.stringify(this.traveler));
     }
 
 
 getTravelerName() {
 
-    const returntraveler = localStorage.getItem('1');
+    let returntraveler = localStorage.getItem('1');
     this.traveler = JSON.parse(returntraveler);
 
     return this.traveler.lastName;

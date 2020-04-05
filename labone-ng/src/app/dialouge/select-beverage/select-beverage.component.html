@@ -1,3 +1,4 @@
+
 <div class="row">
         <hr>
 
@@ -6,7 +7,7 @@
 
 
 
-          <div class="list-group" *ngIf="bevMealSelected">
+          <div class="list-group" *ngIf="!bevMealSelected">
 
             <h3>What drink or meal would you like to order?</h3>
 
@@ -43,7 +44,7 @@
 
         <hr>
 
-           <h2 *ngIf="!bevMealSelected">One {{beverageMeal}}, coming right up!</h2>
+           <h2 *ngIf="bevMealSelected">One {{beverageMeal}}, coming right up!</h2>
     </div>
 
   </div>

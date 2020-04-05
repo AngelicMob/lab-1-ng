@@ -1,69 +1,38 @@
 
+<div>
 
-  <div class="row">
+  <div class="travelSection">
 
-      <br>
-
-    <div class="travelsection" *ngIf="NewTraveler">
-
-
-
-      <h1 *ngIf="travelerSignedUp">
-
-          Alright Mr/MS {{lastNameSection.value}}, what can I do you for?</h1>
-
-      <h1 *ngIf="!travelerSignedUp">
-
-          Greetings, traveler!
-        <br>
-        <br>
-          Haven't seen your face around here before.
-        <br>
-        <br>
-          What's your name?
-
-
-
-    <div class="col-xs-12 col-md-8 col-md-offset-2" #inputSection>
-
-
+      <div class="firstConversation" *ngIf="!travelerSignedUp && !NewTraveler" >
+        <h1>Greetings, traveler!</h1>
+        <h1> Haven't seen your face around here before.</h1>
+        <h1>What's your name?</h1>
         <input type="text" class="form-control" #nameSection>
         <input type="text" class="form-control" #lastNameSection>
+        <button class="btn btn-outline-dark" (click)="submit(nameSection.value, lastNameSection.value)">Submit</button>
+      </div>
 
-
-      <button class="btn btn-outline-dark" (click)="submit(nameSection.value, lastNameSection.value)">Submit</button>
-
-
-  </div>
-
-
-
-
-  <hr>
-
-
-    <div class="usualsection" *ngIf="!NewTraveler">
-      <h2>
-
-        Hello again, Mr/Ms. {{traveler}}
-        The usual?
-
-      </h2>
-      <br>
-
-      <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
-      <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
-
-
-
-
-
-    <app-select-beverage *ngIf="travelerSignedUp || !NewTraveler;" (bev)="getBevMeal($event)"></app-select-beverage>
+      <div class="signedUp"  *ngIf="travelerSignedUp">
+        <h1>Alright Mr/MS {{lastNameSection}} , what can I do you for?</h1>
+        <app-select-beverage (bev)="getBevMeal($event)"></app-select-beverage>
+      </div>
 
   </div>
-
+  <div *ngIf="NewTraveler">
+    <h2>Hello again, Mr/Ms. {{traveler}} The usual?</h2>
+    <app-the-usual (usual)="getUsualOrder($event)" (purchaseDone)="getUsualOrder($event)"></app-the-usual>
+    <h2 *ngIf="usualBevMealChoice">The usual {{usualBevMeal}} is on the way!</h2>
+    </div>
 
     <button class="btn btn-outline-dark" (click)="deleteTraveler()">I was never here</button>
+
+
+</div>
+
+
+
+
+
 
 
 

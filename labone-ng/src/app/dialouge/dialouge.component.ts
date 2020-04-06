@@ -55,7 +55,7 @@ submit(name: string, lastName: string) {
  getBevMeal(beverageMeal: string) {
 
   this.beverageMeal = beverageMeal;
-  this.chosen = true;
+  // this.chosen = true;
  }
 
  getUsualOrder(usuals: string) {

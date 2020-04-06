@@ -8,9 +8,22 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-h1, h2, h3{
+
+
+
+h1 {
   text-align: center;
   color: antiquewhite;
+}
+h2 {
+
+  color: antiquewhite;
+  text-align: center;
+}
+h3 {
+
+  color: antiquewhite;
+  text-align: center;
 }
 
 button {
@@ -18,18 +31,6 @@ button {
   color:black;
   font-size: medium;
 }
-/* input[type=text] {
-  width: 100%;
-  text-align: center;
-  padding: 1.0em;
-  font-size: 1.5em;
-
-}
-input[type=text]:focus {
-  border: 3px solid #555;
-  padding: 1em;
-  text-align: center;
-} */
 
 
 p {

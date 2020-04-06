@@ -1,23 +1,11 @@
-/*
-.row h4 {
-color: antiquewhite;
 
+h2 {
+
+  color: antiquewhite;
+  text-align: center;
 }
+h3 {
 
-.row {
-display: flex;
-justify-content: start;
-flex-direction: row;
-align-content: center;
-flex-basis: auto;
-
+  color: antiquewhite;
+  text-align: center;
 }
-.row2 {
-  display: flex;
-  justify-content: start;
-  flex-direction: row;
-  align-content: center;
-  flex-basis: auto;
-
-  }
-*/
